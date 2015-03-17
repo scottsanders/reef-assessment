@@ -1,0 +1,148 @@
+//
+// Base CSS File - Standard Desktops & CSS Default ~960px
+// --------------------------------------------------
+
+// Grid Variables
+// -------------------
+
+@containerWidth: 960px;
+@columnCount:    12;
+@gutterRatio:    25%;
+
+
+// Type Variables
+// -------------------
+
+@fontSize: 15px;
+@lineHeight: 140%;
+
+
+// Base Styles
+// -------------------
+
+@import "_reset.less";
+
+@import "_variables.less";
+@import "_mixins.less";
+
+@import "_layout.less";
+@import "_type.less";
+@import "_forms.less";
+@import "_buttons.less";
+@import "_menus.less";
+@import "_fonts.less";
+@import "_tooltips.less";
+
+// templates
+@import "templates/_wordpress.less";
+
+// Custom Styles
+// -------------------
+
+body.admin-bar {
+	margin-top: 32px;
+}
+
+
+
+.page {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background-size: cover;
+}
+
+.primary-content {
+	color: white;
+	opacity: 1;
+	.transition(.3s opacity linear);
+	&.fade {
+		opacity: 0;
+	}
+	h1 {
+		font-size: 5em;
+		color: white;
+	}
+	h2 {
+		color: white;
+
+	}
+	p {
+		font-size: 1.5em;
+		line-height: 1.2em;
+
+	}
+	.button {
+		font-size: .7em;
+	}
+}
+
+.secondary-content {
+	z-index: 11;
+	position: relative;
+	header {
+		color: white;
+		background-color: rgba(67,67,67,.9);
+		padding: 1em;
+		h3 {
+			text-transform: uppercase;
+			line-height: 1.1em;
+			font-size: 1.3em;
+			color: white;
+			margin: 0;
+			span {
+				font-size: 1.35em;
+				display: block;
+			}
+		}
+	}
+	aside {
+		background-color: rgba(255,255,255,.9);
+		padding: 1em;
+		color: #404a4e;
+		p {
+			font-weight: 100;
+			line-height: 1.2em;
+			font-size: .9em;
+		}
+		input[type=submit]{
+			width: 100%;
+			font-size: 1.3em;
+		}
+	}
+}
+
+.overlay {
+	display: none;
+	background-color: fade(black,60%);
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+}
+
+.sub-page {
+	.close {
+		position: absolute;
+		right: 10px;
+		top: 10px;
+	}
+	overflow: auto;
+	position: absolute;
+	width: 60%;
+	height: 100%;
+	background: fade(white, 80%);
+	left: -60%;
+	.transition(.3s all linear);
+	&.show {
+		left: 0;
+	}
+	article {
+		padding: 5em;
+	}
+
+}

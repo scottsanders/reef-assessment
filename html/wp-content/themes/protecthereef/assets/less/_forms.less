@@ -1,0 +1,142 @@
+//
+// Forms
+// --------------------------------------------------
+
+
+// Basic Styles
+// -------------------
+
+form {
+	display: block;
+}
+
+fieldset {
+	display: block;
+	margin: 1.25em 0;
+	padding: 0;
+}
+
+legend {
+	display: block;
+	width: 100%;
+	margin: 0 0 1em 0;
+	font-weight: bold;
+	border-bottom: 1px solid @baseColor;
+}
+
+label {
+	display: block;
+	margin: 0 0 0.25em;
+	font-size: .9em;
+	padding-bottom: .5em;
+	color: darken(@baseColor,40%);
+	input[type=checkbox] {
+		margin-right: .5em;
+	}
+}
+
+// Form Elements
+// -------------------
+
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="image"],
+input[type="color"] {
+	display: block;
+	padding: 0.5em .7em;
+	margin: 0 0 0.625em;
+	vertical-align: middle;
+	border: 1px solid @baseColor;
+	outline: none;
+	font-family: @paragraphFont;
+	font-size: 1.2em;
+	font-weight: 300;
+	border-radius: @radius/2px;
+	width: 100%;
+	.box-shadow(inset 0 3px 1px 0 #f6f6f6);
+	.box-sizing(border-box);
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	&:hover {
+		border: 1px solid darken(@baseColor, 3%);
+	}
+	&:focus {
+		border: 1px solid darken(@baseColor, 5%);
+		.box-shadow(0 0 3px 0 fade(@primaryColor,50%));
+	}
+	&[required] {
+		background-image: url(../img/required.png);
+		background-repeat: no-repeat;
+		background-position: center right;
+		background-size: 20px 8.5px;
+	}
+}
+
+// Form Buttons
+
+input[type="submit"],
+input[type="button"] {
+	display: block;
+}
+input[type="file"] {
+	padding: 0.125em;
+	margin: 0 0 0.625em;
+	font-family: inherit;
+	font-size: 1em;
+	-webkit-appearance: none;
+	border-radius: 0;
+	line-height: 100%;
+}
+
+// Misc Additions
+
+textarea {
+	padding: 0.25em; // to make the textarea more writeable
+}
+
+// Bonus HTML5 Elements
+
+progress,
+meter {
+	padding: 0.125em;
+	margin: 0 0 0.625em;
+	font-family: inherit;
+	font-size: 1em;
+}
+
+.progress {
+	width: 100%;
+	background-color: @baseColor;
+	height: 10px;
+	position: relative;
+	.bar {
+		display: inline-block;
+		background-color: @primaryColor;
+		height: 100%;
+		position: absolute;
+		span {
+			position: absolute;
+			right: -10px;
+			bottom: 7px;
+			background-color: white;
+			color: @primaryColor;
+			font-size: .8em;
+			text-transform: uppercase;
+			padding: .3em .7em;
+			line-height: 1em;
+			border-radius: 100px;
+		}
+	}
+}
