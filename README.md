@@ -4,3 +4,8 @@ To setup on a local Apache server:
 - Point `coralalliance.dev` to `127.0.0.1` in `/etc/hosts` 
 - Import the supplied database as `coralalliance`
 - Visit [http://coralalliance.dev](http://coralalliance.dev) in your preferred browser and enter your database credentials through the Wordpress install
+
+Once setup, to login to Wordpress use the following credentials:
+
+- Username: admin
+- Password: admin
